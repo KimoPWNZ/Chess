@@ -7,7 +7,6 @@ public class ChessBoard {
     private boolean blackRook0Moved = false; // Ладья (A)
     private boolean blackRook7Moved = false; // Ладья (H)
     String nowPlayer;
-    String nowPlayerColor;
 
     public ChessBoard() {
         initializeBoard();
@@ -48,7 +47,7 @@ public class ChessBoard {
     }
 
     public void switchPlayer() {
-        nowPlayer = nowPlayer.equals("White") ? "Black" : "White";
+        nowPlayer = nowPlayer.equals("Black") ? "Black" : "White";
     }
 
     public boolean moveToPosition(int fromLine, int fromColumn, int toLine, int toColumn) {
@@ -152,10 +151,8 @@ public class ChessBoard {
         return false; // Рокировка невозможна
     }
 
-    public void printBoard() {  //print board in console
-        System.out.println("Turn " + nowPlayer);
-        System.out.println();
-        System.out.println("Player 2(Black)");
+    public void printBoard() {
+        System.out.println("\t\t\tBlack side");
         System.out.println();
         System.out.println("\t0\t1\t2\t3\t4\t5\t6\t7");
 
@@ -171,7 +168,9 @@ public class ChessBoard {
             System.out.println();
             System.out.println();
         }
-        System.out.println(nowPlayer);
+        System.out.println("\t\t\tWhite side");
+        System.out.println();
+        System.out.printf("Введите действие: ");
     }
 
     public boolean checkPos(int pos) {

@@ -42,7 +42,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         ChessBoard board = buildBoard();
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -68,7 +67,6 @@ public class Main {
                     if (board.castling0(line, column)) {
                         System.out.println("Рокировка удалась");
                         board.printBoard();
-                        board.switchPlayer();
                     } else {
                         System.out.println("Рокировка не удалась");
                     }
